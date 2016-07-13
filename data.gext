@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gexf xmlns="http://www.gexf.net/1.2draft"
-      xmlns:viz="http://www.gexf.net/1.2draft/viz"
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.gexf.net/1.2draft http://www.gexf.net/1.2draft/gexf.xsd"
       version="1.2">
@@ -10,8 +9,16 @@
     </meta>
     <graph mode="static" defaultedgetype="directed">
         <nodes>
-            <node id="0" label="Hello"/>
-            <node id="1" label="Word"/>
+            <node id="0" label="Hello">
+                <color b="51" g="51" r="255"/>
+                <position x="-113.203964" y="30.300962" z="0.0"/>
+                <size value="3.6"/>
+            </node>
+            <node id="1" label="Word">
+                <color b="51" g="255" r="255"/>
+                <position x="285.3261" y="-95.294" z="0.0"/>
+                <size value="3.655348"/>
+            </node>
         </nodes>
         <edges>
             <edge id="0" source="0" target="1"/>
