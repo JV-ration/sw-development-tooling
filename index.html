@@ -1,0 +1,133 @@
+<html>
+
+<head>
+    <title>Tooling for Software Development</title>
+
+    <link rel="stylesheet" href="style.css" media="all"/>
+
+    <!-- JQuery -->
+    <script src="lib/jquery-1.11.3.min.js"></script>
+
+    <!-- Bootstrap from CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"
+          integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+            integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+            crossorigin="anonymous"></script>
+
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon"/>
+
+    <script src="lib/sigma-1.1.0/sigma.min.js"></script>
+
+    <script src="lib/sigma-1.1.0/plugins/sigma.parsers.json.min.js"></script>
+    <script src="lib/sigma-1.1.0/plugins/sigma.parsers.cypher.min.js"></script>
+
+    <script src="lib/sigma-1.1.0/plugins/sigma.renderers.edgeLabels.min.js"></script>
+    <script src="lib/sigma-1.1.0/plugins/sigma.plugins.animate.min.js"></script>
+    <script src="lib/sigma-1.1.0/plugins/sigma.renderers.edgeLabels.min.js"></script>
+
+</head>
+
+<body>
+
+<div class="row">
+    <div class="col-md-4">
+
+        <form class="form-horizontal">
+
+            <div>Filter main graph nodes (RegExp)</div>
+            <div class="form-group">
+                <label for="filterG" class="col-sm-2 control-label">GroupId</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="filterG" value=".*">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="filterA" class="col-sm-2 control-label">ArtifactId</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="filterA" value=".*">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="filterP" class="col-sm-2 control-label">Packaging</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="filterP" value=".*">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="filterC" class="col-sm-2 control-label">Classifier</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="filterC" value=".*">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="filterV" class="col-sm-2 control-label">Version</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="filterV" value=".*">
+                </div>
+            </div>
+
+            <div>Filter dependency nodes (RegExp)</div>
+            <div class="form-group">
+                <label for="filterG2" class="col-sm-2 control-label">GroupId</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="filterG2" value=".*">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="filterA2" class="col-sm-2 control-label">ArtifactId</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="filterA2" value=".*">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="filterP2" class="col-sm-2 control-label">Packaging</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="filterP2" value=".*">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="filterC2" class="col-sm-2 control-label">Classifier</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="filterC2" value=".*">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="filterV2" class="col-sm-2 control-label">Version</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="filterV2" value=".*">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <input class="btn btn-default" type="button" value="Refresh" onclick="doCypherAll()">
+                    <input class="btn" type="button" value="Show Cypher" onclick="$('#toggle-cypher_all').toggle('drop')">
+                </div>
+            </div>
+
+            <div class="form-group" id="toggle-cypher_all">
+                <label for="cypher_all" class="col-sm-2 control-label">Cypher query</label>
+                <textarea id="cypher_all" title="Generated Cypher Code"></textarea>
+            </div>
+
+        </form>
+
+    </div>
+    <div class="col-md-8 fill">
+        <div id="graph" class="graph-container">
+            <div id="graph-label">[0] Nodes</br>[0] Edges</div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div id="loadingScreen"></div>
+    <script src="js/pathfinder-config.js"></script>
+    <script src="js/pathfinder.js"></script>
+</div>
+
+</body>
+</html>
