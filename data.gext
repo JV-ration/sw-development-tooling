@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gexf xmlns="http://www.gephi.org/gexf" xmlns:viz="http://www.gephi.org/gexf/viz">
+<!-- <gexf xmlns="http://www.gexf.net/1.2draft"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.gexf.net/1.2draft http://www.gexf.net/1.2draft/gexf.xsd"
+      version="1.2"> -->
+    <graph mode="static">
+        <attributes class="node" type="static">
+            <attribute id="0" title="nodedef" type="string"/>
+            <attribute id="1" title="label" type="string"/>
+            <attribute id="2" title="occurrences" type="integer"/>
+        </attributes>
+        <nodes>
+            <node id="0" label="1831">
+                <attvalues>
+                    <attvalue id="0" value="n0"/>
+                    <attvalue id="1" value="1831"/>
+                    <attvalue id="2" value="1"/>
+                </attvalues>
+            </node>
+            <node id="1" label="New York">
+                <attvalues>
+                    <attvalue id="0" value="n1"/>
+                    <attvalue id="1" value="New York"/>
+                    <attvalue id="2" value="143"/>
+                </attvalues>
+            </node>
+        </nodes>
+        <edges>
+            <edge id="0" source="0" target="1"/>
+        </edges>
+    </graph>
+</gexf>
