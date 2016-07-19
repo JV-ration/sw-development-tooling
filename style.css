@@ -21,9 +21,9 @@ table td tr{
 }
 
 #graph{
-    top: 27px;
+    top: 10px;
     bottom: 10px;
-    left: 210px;
+    left: 10px;
     right: 10px;
     position: absolute;
 }

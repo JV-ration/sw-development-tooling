@@ -7,13 +7,6 @@ $(function() {
     $('#toggle-cypher_all').hide();
     $('#toggle-cypher_search').hide();
 
-    $("#tabs").tabs();
-
-    //Accordion Init
-    $("#accordion").accordion({
-        heightStyle: "fill"
-    });
-
 });
 
 s.addCamera('cam1'),
