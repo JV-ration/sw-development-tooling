@@ -7,6 +7,3 @@ var n4juser 	= "neo4j";
 var n4jpassword = "vsneo4j";
 var n4jurl 	= "http://localhost:7474";
 var n4jendopint	= "/db/data/cypher";
-
-var pfurl 	= "http://localhost:8080";
-var crawlerpath = "crawler/crawl";
